@@ -31,7 +31,7 @@ time1=$( date "+%s" )
 echo [INIT] `date`
 echo [HOST] `hostname`
 
-BWA=/ifs/data/c2b2/ngs_lab/ngs/usr/bin/bwa
+BWA=bin/bwa
 
 fastq_file=$1
 reference=$2

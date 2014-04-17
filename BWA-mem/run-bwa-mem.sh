@@ -27,7 +27,7 @@
 index_file="files.index"
 output_dir=$1
 
-fasta_dir="/ifs/scratch/c2b2/ys_lab/ahc2149/reference"
+fasta_dir="ref"
 fasta="human_g1k_v37.MaskTRB.TRBp8.fasta"
 
 reference=$fasta_dir/$fasta

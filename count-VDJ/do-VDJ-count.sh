@@ -23,7 +23,7 @@ time1=$( date "+%s" )
 echo [INIT] `date`
 echo [HOST] `hostname`
 
-
+BASE_WD=`pwd`
 
 INPUT_FILENAME=$1
 TRA_DIR="${2}/TRA"
@@ -40,7 +40,7 @@ TRA_FILENAME=${TRA_DIR}/${BASE_FILENAME}.TRA.sam
 TRB_FILENAME=${TRB_DIR}/${BASE_FILENAME}.TRB.sam
 IGH_FILENAME=${IGH_DIR}/${BASE_FILENAME}.IGH.sam
 
-FILTER_WD="/ifs/scratch/c2b2/ys_lab/ahc2149/scripts/count-VDJ/Filter-SAM"
+FILTER_WD="${BASE_WD}/Filter-SAM"
 
 pushd $FILTER_WD > /dev/null
 samtools view $INPUT_FILENAME | python filter_SAM.py --config=coordinates/TRA.json - > $TRA_FILENAME
@@ -60,7 +60,7 @@ rm $TRA_FILENAME
 rm $TRB_FILENAME
 rm $IGH_FILENAME
 
-COUNT_WD="/ifs/scratch/c2b2/ys_lab/ahc2149/scripts/count-VDJ/Count-VDJ"
+COUNT_WD="${BASE_WD}/Count-VDJ"
 pushd $COUNT_WD > /dev/null
 perl TRA-VDJ-probabilities.pl $SORTED_TRA_FILENAME
 perl TRB-VDJ-probabilities.pl $SORTED_TRB_FILENAME

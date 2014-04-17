@@ -1,10 +1,10 @@
 #!/bin/bash
 
-WORKING_DIR="/ifs/scratch/c2b2/ys_lab/ahc2149/Snyderome"
+WORKING_DIR="wd"
 
 OUTPUT_PREFIX="vdj"
-OUTPUT_DIR="/ifs/scratch/c2b2/ys_lab/ahc2149/Snyderome/vdj-tables/tsv"
-SCRIPT="/ifs/scratch/c2b2/ys_lab/ahc2149/Snyderome/vdj-tables/vdj-table.py"
+OUTPUT_DIR="${WORKING_DIR}/vdj-tables/tsv"
+SCRIPT="${WORKING_DIR}/vdj-tables/vdj-table.py"
 
 function make_table {
   local SEQUENCE=$1
@@ -12,7 +12,7 @@ function make_table {
   local TYPE=$3
 
   local OUTPUT_FILE="${OUTPUT_DIR}/${OUTPUT_PREFIX}-${SEQUENCE}-${METHOD}-${TYPE}.tsv"
-  local INPUT_DIR="/ifs/scratch/c2b2/ys_lab/ahc2149/Snyderome/vdj-${METHOD}/${SEQUENCE}"
+  local INPUT_DIR="${WORKING_DIR}/vdj-${METHOD}/${SEQUENCE}"
   local INPUT_PATTERN="*.${TYPE}ProbNoReadsName"
 
   python $SCRIPT `find $INPUT_DIR -name $INPUT_PATTERN` > $OUTPUT_FILE

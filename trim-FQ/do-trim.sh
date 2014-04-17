@@ -17,9 +17,11 @@
 #
 # 2013-10-01 -- Andy Chiang
 
+BASE_WD=`pwd`
+
 input_file=$1
 fastq_file=${input_file%%.gz}
-trim_script="/ifs/scratch/c2b2/ys_lab/ahc2149/scripts/trim-FQ/trim.pl"
+trim_script="${BASE_WD}/trim.pl"
 
 gunzip -c $input_file > $fastq_file
 $trim_script $fastq_file

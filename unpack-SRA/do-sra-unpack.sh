@@ -13,7 +13,7 @@
 #       docs!
 
 
-fastq_dump="/ifs/scratch/c2b2/ys_lab/ahc2149/software/sratoolkit.2.3.3-4-centos_linux64/bin/fastq-dump"
+fastq_dump="bin/fastq-dump"
 
 
 input_file=$1

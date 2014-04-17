@@ -21,7 +21,7 @@
 
 
 index_file="files.index"
-output_dir="/ifs/scratch/c2b2/ys_lab/ahc2149/Snyderome/fastq-reads"
+output_dir="reads"
 infile_ext=".lite.sra"
 
 if [ -z $index_file ] || [ ! -e $index_file ]; then
